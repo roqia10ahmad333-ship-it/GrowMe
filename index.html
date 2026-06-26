@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>GrowMe – Self Development</title>
+    <link rel="manifest" href="manifest.json" />
+    <link rel="stylesheet" href="style.css" />
+    <meta name="theme-color" content="#ecfdf5" />
+</head>
+<body>
+
+    <!-- ========== LOGIN SCREEN ========== -->
+    <div id="loginScreen" class="screen active">
+        <div class="card">
+            <div class="logo">🌱 GrowMe</div>
+            <p class="subtitle">Grow your soft skills, step by step</p>
+            <form id="loginForm">
+                <input type="email" id="loginEmail" placeholder="Email" required />
+                <input type="password" id="loginPassword" placeholder="Password" required />
+                <button type="submit" class="btn">Log In</button>
+            </form>
+            <p class="switch">No account? <span id="goToSignup">Sign Up</span></p>
+        </div>
+    </div>
+
+    <!-- ========== SIGNUP SCREEN ========== -->
+    <div id="signupScreen" class="screen">
+        <div class="card">
+            <div class="logo">🌱 GrowMe</div>
+            <p class="subtitle">Start your growth journey today</p>
+            <form id="signupForm">
+                <input type="text" id="signupName" placeholder="Full Name" required />
+                <input type="email" id="signupEmail" placeholder="Email" required />
+                <input type="password" id="signupPassword" placeholder="Password" required />
+                <button type="submit" class="btn">Create Account</button>
+            </form>
+            <p class="switch">Have an account? <span id="goToLogin">Log In</span></p>
+        </div>
+    </div>
+
+    <!-- ========== HOME DASHBOARD ========== -->
+    <div id="homeScreen" class="screen">
+        <header>
+            <div class="logo-small">🌱 GrowMe</div>
+            <div class="user-info">
+                <button id="logoutBtn" class="btn-logout">log out</button>
+            </div>
+        </header>
+
+        <div class="dashboard">
+            <div class="greeting">
+                <h2>👋Hello <span id="greetingName">User</span></h2>
+                <p>Let's build your soft skills</p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span>Progress</span>
+                    <strong id="progressPercent">0%</strong>
+                </div>
+                <div class="stat-card">
+                    <span>Level</span>
+                    <strong id="userLevel">Beginner</strong>
+                </div>
+                <div class="stat-card">
+                    <span>Tasks Done</span>
+                    <strong id="tasksDone">0</strong>
+                </div>
+            </div>
+
+            <div class="actions">
+                <button id="startAssessmentBtn" class="btn">Take Assessment</button>
+                <button id="viewLessonsBtn" class="btn secondary">Lessons</button>
+                <button id="viewChallengesBtn" class="btn secondary">Challenges</button>
+            </div>
+
+            <div id="quickTips" class="tips-box">
+                <h4>Daily Tip</h4>
+                <p id="dailyTip">Consistency beats perfection. Small steps every day create big change.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== ASSESSMENT SCREEN ========== -->
+    <div id="assessmentScreen" class="screen">
+        <div class="assessment-header">
+            <button id="backHomeFromAssessment" class="back-btn">←</button>
+            <h2>Soft Skills Quiz</h2>
+            <span id="qProgress">1 / 10</span>
+        </div>
+        <div class="progress-bar">
+<div id="assessmentProgress" style="width:10%;"></div>
+        </div>
+        <div id="questionContainer" class="question-box">
+            <h3 id="qText">Loading...</h3>
+            <div id="optionsContainer" class="options"></div>
+        </div>
+        <button id="nextQuestionBtn" class="btn" style="display:none;">Next →</button>
+        <button id="submitAssessmentBtn" class="btn" style="display:none;">Show Results from here</button>
+    </div>
+
+    <!-- ========== RESULTS SCREEN ========== -->
+    <div id="resultScreen" class="screen">
+        <div class="result-header">
+            <h2>Your Results</h2>
+            <button id="backHomeFromResult" class="back-btn">←</button>
+        </div>
+        <div id="resultContent" class="result-content"></div>
+        <button id="goToHomeFromResult" class="btn">Go Home</button>
+    </div>
+
+    <!-- ========== LESSONS SCREEN ========== -->
+    <div id="lessonsScreen" class="screen">
+        <div class="lesson-header">
+            <button id="backHomeFromLessons" class="back-btn">←</button>
+            <h2>📺 Video Lessons</h2>
+        </div>
+        <div id="lessonList" class="lesson-list"></div>
+    </div>
+
+    <!-- ========== CHALLENGES SCREEN ========== -->
+    <div id="challengesScreen" class="screen">
+        <div class="challenge-header">
+            <button id="backHomeFromChallenges" class="back-btn">←</button>
+            <h2>Camera Challenges</h2>
+        </div>
+        <div id="challengeList" class="challenge-list"></div>
+        <div id="cameraContainer" style="display:none; margin-top:20px; text-align:center;">
+            <video id="cameraFeed" autoplay playsinline style="width:100%; max-width:400px; border-radius:16px; background:#1e293b;"></video>
+            <div style="margin-top:10px;">
+                <button id="startCameraBtn" class="btn secondary">Start Camera</button>
+                <button id="stopCameraBtn" class="btn secondary" style="display:none;">Stop</button>
+                <button id="challengeDoneBtn" class="btn" style="display:none;">I Did It!</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</ht
